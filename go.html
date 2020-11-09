@@ -139,7 +139,9 @@
   function attachVideo(id, stream) {
     const videoElement = document.getElementById("video1");
     videoElement.srcObject = stream;
+    videoElement.addEventListener('click',function(){
     videoElement.play();
+    },false);
     console.info("remote media start");
   }
 
