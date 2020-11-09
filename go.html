@@ -36,14 +36,14 @@
         }
       }
 
-      //const audioTracks = stream.getAudioTracks();
-      //if (audioTracks) {
-        //console.log('audioTracks.length=' + audioTracks.length);
-        //for (let i = 0; i < audioTracks.length; i++) {
-          //const track = audioTracks[i];
-          //console.log('track.id=' + track.id);
-        //}
-      //}
+      const audioTracks = stream.getAudioTracks();
+      if (audioTracks) {
+        console.log('audioTracks.length=' + audioTracks.length);
+        for (let i = 0; i < audioTracks.length; i++) {
+          const track = audioTracks[i];
+          console.log('track.id=' + track.id);
+        }
+      }
     }
   </script>
   <script type="text/javascript">
@@ -51,7 +51,7 @@
   let myApiKey = '2885722c-b2d0-4dd7-9d7b-d9738873effa'; //null; // set your API key
   let peer = null;
   let meshRoom = null;
-  const defaultRoomName = '_oculusgo_test_room';
+  const defaultRoomName = '5394';
 
   function getApiKey() {
     let key = document.getElementById('api_key_text').value;
@@ -160,8 +160,6 @@
     AFRAME.registerComponent('play-on-window-click', {
       init: function () {
         this.onClick = this.onClick.bind(this);
-        hideWaitMessage();
-        joinRoom(null);
       },
       play: function () {
         window.addEventListener('click', this.onClick);
