@@ -83,6 +83,7 @@
   let localStream = null;
   function startMediaAndJoinRoom() {
     const mediaConstraints = {video: false, audio: true};
+    console.log('--startMediaAndJoinRoom is called--');
     navigator.mediaDevices.getUserMedia(mediaConstraints)
     .then( stream => {
       _logStream(stream);
@@ -117,7 +118,6 @@
       });
       meshRoom.on('stream', function(stream) {
         let remoteId = stream.peerId;
-        console.log('stream =' + stream);
         attachVideo(remoteId, stream);
       });
       meshRoom.on('peerLeave', function(peerId) {
