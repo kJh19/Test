@@ -104,7 +104,7 @@
 
     peer = new Peer({key: apiKey, debug: 1});
     peer.on('open',function() {
-      console.log('--open--');
+      console.log('--open--' + stream);
       //meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: localStream});
       if (stream) {
         meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: stream});
