@@ -117,6 +117,7 @@
       });
       meshRoom.on('stream', function(stream) {
         let remoteId = stream.peerId;
+        console.log('stream =' + stream);
         attachVideo(remoteId, stream);
       });
       meshRoom.on('peerLeave', function(peerId) {
