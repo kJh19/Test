@@ -169,8 +169,8 @@
       },
       onClick: function (evt) {
         hideWaitMessage();
-        joinRoom(null);
-        //startMediaAndJoinRoom();
+        //joinRoom(null);
+        startMediaAndJoinRoom();
       }
     });
 
@@ -208,7 +208,6 @@
   <a-scene>
     <a-assets>
       <video id="video1" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-      Your browser does not support the video tag.
       </video>
     </a-assets>
     <a-videosphere src="#video1" rotation="0 180 0"
