@@ -104,7 +104,7 @@
         meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: stream});
       }
       else {
-        meshRoom = peer.joinRoom(roomName, {mode: 'mesh'});
+        meshRoom = peer.joinRoom(roomName, {mode: 'mesh', videoReceiveEnabled: True, audioReceiveEnabled: True});
       }
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
