@@ -108,6 +108,7 @@
       }
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
+        function(stream)
         console.log('check stream:' + stream);
       });
       meshRoom.on('stream', function(stream) {
@@ -205,6 +206,7 @@
   <a-scene>
     <a-assets>
       <video id="video1" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+        <source src="" type="video/mp4">
       </video>
     </a-assets>
     <a-videosphere src="#video1" rotation="0 180 0"
