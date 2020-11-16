@@ -8,36 +8,36 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script type="text/javascript" src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script>
-    function _assert(desc, v) {
-      if (v) {
-        return;
-      }
-      else {
-        let caller = _assert.caller || 'Top level';
-        console.error('ASSERT in %s, %s is :', caller, desc, v);
-      }
-    }
+    //function _assert(desc, v) {
+    //  if (v) {
+    //    return;
+    //  }
+    //  else {
+    //    let caller = _assert.caller || 'Top level';
+    //    console.error('ASSERT in %s, %s is :', caller, desc, v);
+    //  }
+    //}
 
-    function _logStream(stream) {
-      console.log(msg + ': id=' + stream.id);
-      const videoTracks = stream.getVideoTracks();
-      if (videoTracks) {
-        console.log('videoTracks.length=' + videoTracks.length);
-        for (let i = 0; i < videoTracks.length; i++) {
-          const track = videoTracks[i];
-          console.log('track.id=' + track.id);
-        }
-      }
+    //function _logStream(stream) {
+    //  console.log(msg + ': id=' + stream.id);
+    //  const videoTracks = stream.getVideoTracks();
+    //  if (videoTracks) {
+    //    console.log('videoTracks.length=' + videoTracks.length);
+    //    for (let i = 0; i < videoTracks.length; i++) {
+    //      const track = videoTracks[i];
+    //      console.log('track.id=' + track.id);
+    //    }
+    //  }
 
-      const audioTracks = stream.getAudioTracks();
-      if (audioTracks) {
-        console.log('audioTracks.length=' + audioTracks.length);
-        for (let i = 0; i < audioTracks.length; i++) {
-          const track = audioTracks[i];
-          console.log('track.id=' + track.id);
-        }
-      }
-    }
+    //  const audioTracks = stream.getAudioTracks();
+    //  if (audioTracks) {
+    //    console.log('audioTracks.length=' + audioTracks.length);
+    //    for (let i = 0; i < audioTracks.length; i++) {
+    //      const track = audioTracks[i];
+    //      console.log('track.id=' + track.id);
+    //    }
+    //  }
+    //}
   </script>
   <script type="text/javascript">
   // ----- use skyway room ----
@@ -73,20 +73,20 @@
     }
   }
 
-  let localStream = null;
-  function startMediaAndJoinRoom() {
-    const mediaConstraints = {video: false, audio: true};
-    console.log('--startMediaAndJoinRoom is called--');
-    navigator.mediaDevices.getUserMedia(mediaConstraints)
-    .then( stream => {
-      _logStream(stream);
-      localStream = stream;
-      joinRoom(stream);
-    })
-    .catch ( err => {
-      console.error('getUserMedia ERROR:', err );
-    })
-  }
+  //let localStream = null;
+  //function startMediaAndJoinRoom() {
+  //  const mediaConstraints = {video: false, audio: true};
+  //  console.log('--startMediaAndJoinRoom is called--');
+  //  navigator.mediaDevices.getUserMedia(mediaConstraints)
+  //.then( stream => {
+  //    _logStream(stream);
+  //    localStream = stream;
+  //    joinRoom(stream);
+  //  })
+  //  .catch ( err => {
+  //    console.error('getUserMedia ERROR:', err );
+  //  })
+  //}
 
   function joinRoom(stream) {
     let apiKey = getApiKeyFromURL() || myApiKey;
