@@ -104,16 +104,24 @@
         meshRoom = peer.joinRoom(roomName, {mode: 'mesh', stream: stream});
       }
       else {
-        meshRoom = peer.joinRoom(roomName, {mode: 'mesh', videoReceiveEnabled: True, audioReceiveEnabled: True});
+        meshRoom = peer.joinRoom(roomName, {mode: 'mesh', videoReceiveEnabled: true, audioReceiveEnabled: true});
       }
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
         console.log('check stream:' + stream);
       });
       meshRoom.on('stream', function(stream) {
-        console.log('want to attach:' + stream);
+        console.log('on stream:' + stream);
         let remoteId = stream.peerId;
         attachVideo(remoteId, stream);
+      });
+      meshRoom.on('call', function(stream) {
+        console.log('on call:' + stream);
+        let remoteId = stream.peerId;
+        attachVideo(remoteId, stream);
+      });
+      meshRoom.on('error', function(error) {
+        console.log('error:' + error);;
       });
       meshRoom.on('peerLeave', function(peerId) {
         detachVideo(peerId);
