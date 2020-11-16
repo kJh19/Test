@@ -108,8 +108,10 @@
       }
       meshRoom.on('open', function() {
         console.log('joined the room:' + roomName);
+        console.log('check stream:' + stream);
       });
       meshRoom.on('stream', function(stream) {
+        console.log('want to attach:' + stream);
         let remoteId = stream.peerId;
         attachVideo(remoteId, stream);
       });
