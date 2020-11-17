@@ -115,14 +115,6 @@
         let remoteId = stream.peerId;
         attachVideo(remoteId, stream);
       });
-      meshRoom.on('call', function(stream) {
-        console.log('on call:' + stream);
-        let remoteId = stream.peerId;
-        attachVideo(remoteId, stream);
-      });
-      meshRoom.on('error', function(error) {
-        console.log('error:' + error);;
-      });
       meshRoom.on('peerLeave', function(peerId) {
         detachVideo(peerId);
       });
